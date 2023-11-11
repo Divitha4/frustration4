@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Story Reader</title>
+    <link href='https://fonts.googleapis.com/css?family=Mukta' rel='stylesheet'>
+
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f0f0f0;
+        }
+
+        header {
+            background-color: #333;
+            color: #fff;
+            padding: 10px;
+            text-align: center;
+        }
+
+        main {
+            display: flex;
+            flex-direction: column;
+            max-width: 700px;
+            min-height: 700px;
+            margin: 20px auto;
+            padding: 20px;
+            background-color: #fff;
+            box-sizing:border-box;
+           box-shadow: 0px 10px 20px 5px rgba(160, 248, 248, 0.7);
+            /* box-shadow: 0px 10px 20px 2px rgba(8, 7, 7, 0.1); */
+        }
+
+        h1 {
+            font-size: 24px;
+        }
+
+        p {
+            font-size: 16px;
+            line-height: 1.5;
+        }
+
+        button {
+            /* display: none; */
+            background-color: #333;
+            color: #fff;
+            padding: 10px 20px;
+            border: none;
+            /* justify-content: flex-start; */
+            /* cursor: pointer; */
+            /* float: inline-end; */
+
+        }
+
+        button:hover {
+            background-color: #555;
+        }
+        #text{
+            font-size: 20px;
+            line-height: 2.5;
+            min-height: 100%;
+            min-width: 100%;
+            border: 0px solid;
+            font-family: 'Mukta';
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <!-- STORY TITLE -->
+        <h1>Book Store</h1>
+    </header>
+    <main>
+       <nav> <h1>The Art of Letting Go</h1></nav>
+        <div id="text"></div>
+        <!-- <footer><button id="next-button">Next Chapter</button></footer> -->
+    </main>
+
+    <script>
+       
+        
+        const textElement = document.getElementById("text");
+        const text = `Once upon a time, in a bustling city filled with honking cars and busy people, there lived a man named Mike. Mike was always rushing around, stressed out by work and the demands of daily life. He felt like he was constantly running on a hamster wheel, never able to catch a break.
+
+One day, as Mike was walking home from work, he noticed a small bookstore tucked away on a quiet street. Intrigued, he decided to step inside and escape from the chaos of the city for a while.
+
+As Mike entered the bookstore, he was greeted by the comforting smell of old books and the soft sound of classical music playing in the background. He wandered through the aisles, running his fingers along the spines of the books, feeling a sense of tranquility wash over him.
+
+He stumbled upon a section filled with self-help and personal growth books. One book caught his eye – “The Art of Letting Go: Finding Peace in the Midst of Chaos.” Intrigued, he decided to sit down in a cozy reading nook and delve into its pages.
+
+As Mike read, he discovered valuable insights and practical techniques for managing stress and finding inner peace. The book taught him the importance of letting go of things he couldn’t control and focusing on the present moment. It encouraged him to embrace mindfulness and to find joy in simple pleasures.
+
+Inspired by what he had read, Mike began incorporating these practices into his daily life. He started taking short breaks throughout the day to breathe deeply and appreciate the beauty around him. He made time for activities that brought him joy, like painting and spending time with loved ones.
+
+Gradually, Mike noticed a shift in his mindset. He felt less overwhelmed by the demands of work and more connected to his own well-being. He learned to find moments of calmness even in the midst of a busy day.
+
+With his newfound sense of peace, Mike became a source of positivity and inspiration for those around him. His friends and coworkers noticed the change in him and sought his advice on managing stress and finding happiness.
+
+So, my friend, the next time you’re feeling frustrated, remember Mike’s story. Take a moment to step back, breathe, and focus on the things that bring you joy. Embrace the power of letting go and finding peace within yourself. You have the ability to transform frustration into happiness and calmness. 🌟😊`;
+        let index = 0;
+
+        function type() {
+          if (index < text.length) {
+            textElement.innerHTML += text.charAt(index);
+            index++;
+            setTimeout(type, 80);
+          }
+        }
+        type();
+        // if(type()){
+       
+        // }
+    </script>
+</body>
+</html>
